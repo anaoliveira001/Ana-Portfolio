@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap');
+
+:root{
+    --purple: #DA70D6;
+    --black: #000;
+    --white: #fff;
+    --light-bg:#eee;
+    --border-bold: .5rem solid var(--black);
+    --border-light: .2rem solid var(--black); 
+}
+
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--black);
+}
+
+*::selection{
+    background-color: var(--black);
+    color: var(--yellow);
+}
+
+*::-webkit-scrollbar{
+    height: 5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: var(--black);
+}
+
+*::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow: hidden;
+    transition: .2s linear !important;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0;
+    height: 100vh;
+    background-color: var(--white);
+    border-right: var(--border-bold);
+    width: 35rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    transition: .2s linear !important;
+    text-align: center;
+}
+
+.header .logo{
+    color: #827ce0;
+    border-bottom:var(--border-light);
+    font-weight: bolder;
+    font-size: 4.5rem;
+}
+
+.header .navbar{
+    width: 100%;
+}
+
+.header .navbar a{
+    display: block;
+    font-size: 2.5rem;
+    padding: 1.5rem;
+    margin: 3rem;
+}
+
+.header .navbar a.active,
+.header .navbar a:hover{
+   background-color: var(--purple);
+}
+
+.header .follow a{
+    font-size: 3rem;
+    margin:0 1rem;
+    cursor: pointer;
+    transition: .6s linear !important;
+ }
+ 
+ .header .follow a:hover{
+    transform: rotate(360deg);
+ }
