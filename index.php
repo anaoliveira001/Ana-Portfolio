@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!--CND link - font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <title>AnaDev</title>
+    <title>Ana_Dev</title>
 </head>
 <body>
-
 <!--header starts -->
 <header class="header">
     <div id="menu-btn" class="fas fa-bars"></div>
@@ -40,7 +39,7 @@
             <img src="images/picture_ana.jpeg" alt="">
         </div>
         <div class="content">
-           <h3>Hi, I'am Ana Oliveira</h3>
+           <h3>Hi, I am Ana Oliveira</h3>
            <span>Frontend Web Developer and UI/UX Designer</span>
            <p>I started studying programming when I was 17. 
                 I have a few projects and I want to work in a technology company that allows me to grow and develop my skills together with a team.</p>
