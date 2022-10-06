@@ -5,6 +5,8 @@
     --black: #000;
     --white: #fff;
     --light-bg:#eee;
+    --colorful: #FFB6C1;
+    --gold: #FFD700;
     --border-bold: .5rem solid var(--black);
     --border-light: .2rem solid var(--black); 
 }
@@ -15,7 +17,6 @@
     box-sizing: border-box;
     outline: none; border: none;
     text-decoration: none;
-    text-transform: capitalize;
     color: var(--black);
 }
 
@@ -48,9 +49,48 @@ body{
     transition: .2s linear !important;
 }
 
+body.active{
+    padding-left: 35rem;
+}
+
+section{
+    padding:  3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.heading{
+    margin-bottom: 3rem;
+    text-align: center; 
+}
+
+.heading span{
+    text-transform: uppercase;
+    font-size: 6.5rem;
+    border-bottom: var(--border-bold);
+
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    border: var(--border-bold);
+    border-radius: 10px;
+    color: var(--black);
+    font-size: 2rem;
+}
+
+.btn:hover{
+    background-color: var(--gold);
+    color: var(--black);
+}
+
 .header{
     position: fixed;
-    top:0; left:0;
+    top:0; left: -35rem;
     height: 100vh;
     background-color: var(--white);
     border-right: var(--border-bold);
@@ -67,7 +107,6 @@ body{
 
 .header .logo{
     color: #827ce0;
-    border-bottom:var(--border-light);
     font-weight: bolder;
     font-size: 4.5rem;
 }
@@ -86,6 +125,7 @@ body{
 .header .navbar a.active,
 .header .navbar a:hover{
    background-color: var(--purple);
+   border-radius: 15px;
 }
 
 .header .follow a{
@@ -97,4 +137,153 @@ body{
  
  .header .follow a:hover{
     transform: rotate(360deg);
+ }
+
+ #menu-btn{
+    position: absolute;
+    top: 0; right: -5.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 5rem;
+    font-size: 2.5rem;
+    cursor: pointer;
+    background-color: var(--colorful);
+    color: #eee;
+ }
+
+ .header.active{
+    left: 0;
+ }
+
+ .home{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    min-height: 100vh;
+ }
+
+ .home .image{
+    flex: 1 1 40rem;
+ }
+
+ .home .image img{
+    height: 65rem;
+    padding: 2rem;
+    border: var(--border-bold);
+ }
+
+ .home .content{
+    flex: 1 1 40rem;
+ }
+
+ .home .content h3{
+    text-transform: uppercase;
+    font-size: 5rem;
+    margin-bottom: .5rem;
+ }
+
+ .home .content span{
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--gold);
+    border-radius: 10px;
+    font-size: 2.5rem;
+    margin: 1rem 0;
+ }
+
+ .home .content p{
+    font-size: 1.7rem;
+    line-height: 2;
+    padding: 1rem 0;
+ }
+
+ .about .biography p{
+    margin:2rem auto;
+    max-width: 70rem;
+    line-height: 2;
+    font-size: 1.8rem;
+ }
+
+.about .biography .bio{
+    margin-top: 1rem;
+}
+
+.about .biography .bio h3{
+    padding:1rem 2rem;
+    display: inline-block;
+    margin:1rem;
+    background-color: var(--light-bg);
+    border:var(--border-bold);
+    word-break: break-all;
+    font-size: 2.0rem;
+    font-weight: normal;
+    text-transform: none;
+    border-radius: 10px;
+ }
+
+ .about .biography .bio h3 span{
+    font-weight: lighter;
+ }
+
+ .about .skills{
+    
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* media queries */
+
+ @media (max-width:991px){
+    html{
+       font-size: 55%;
+    }
+    body.active{
+       padding-left: 0;
+    }
+ }
+
+ @media (max-width:450px){
+    html{
+        font-size: 50%;  
+    }
+    .header.active{
+        padding-top: 7rem;
+     }
+     #menu-btn.fa-times{
+        right:0;
+     }
+
+     .home .image img{
+        height: auto;
+        width: 100%;
+     }
+
+     .heading span{
+        font-size: 4rem;
+     }
+
+     .about .biography .bio h3 span{
+        font-size: 2rem;
+     }
  }
