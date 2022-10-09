@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <title>Ana_Dev</title>
 </head>
+
 <body>
+
 <!--Animation Starts -->
 <div id="particle-container">
   <div class="particle"></div>
@@ -56,11 +59,11 @@
     <a href="#home" class="logo">AnaDev</a>
     <!--navbar starts -->
     <nav class="navbar">
-        <a href="home" class="active">Home</a>
-        <a href="about">About me</a>
-        <a href="services">Services</a>
-        <a href="portfolio">My work</a>
-        <a href="contact">Contact</a>
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About me</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">My work</a>
+        <a href="#contact">Contact</a>
     </nav>
     <div class="follow">
         <a href="#" class="fab fa-instagram"></a>
@@ -73,14 +76,14 @@
 
 <!--home section starts -->
     <section class="home" id="home">
-        <div class="image">
+        <div class="image" data-aos="fade-rigth">
             <img src="images/picture_ana.jpeg" alt="">
         </div>
         <div class="content">
-           <h3>Hi, I am Ana Oliveira</h3>
-           <span>Frontend Web Developer and UI/UX Designer</span>
-           <p></p>
-           <a href="#about" class="btn">About Me</a>
+           <h3 data-aos="fade-up">Hi, I am Ana Oliveira</h3>
+           <span data-aos="fade-up">Frontend Web Developer and UI/UX Designer</span>
+           <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptatem dolore nostrum veritatis officiis deserunt facilis corrupti at, dicta ducimus quaerat reiciendis soluta illum rem cupiditate vitae, ea tempora itaque!</p>
+           <a data-aos="fade-up" href="#about" class="btn">About Me</a>
         </div>
     </section>
 <!--home section end-->
@@ -88,34 +91,34 @@
 <!--about section start-->
     <section class="about" id="about">
 
-        <h1 class="heading"><span>Biography</span></h1>
+        <h1 class="heading" data-aos="fade-up"><span>Biography</span></h1>
         <div class="biography">
             <p>
             I started studying programming when I was 17. 
             I have a few projects and I want to work in a technology company that allows me to grow and develop my skills together with a team.</p>
 
             <div class="bio">
-                <h3><span>Name : </span>Ana Paula Oliveira</h3>
-                <h3><span>Age: </span>32 years</h3>
-                <h3><span>Email : </span>anaestefanodeoliveira@outlook.com</h3>
-                <h3><span>Adress : </span>Aveiro, Portugal</h3>
-                <h3><span>Phone : </span>+351 935 839 449</h3>
-                <h3><span>Experince : </span>3+ years</h3>
+                <h3 data-aos="zoom-in"><span>Name : </span>Ana Paula Oliveira</h3>
+                <h3 data-aos="zoom-in"><span>Age: </span>32 years</h3>
+                <h3 data-aos="zoom-in"><span>Email : </span>anaestefanodeoliveira@outlook.com</h3>
+                <h3 data-aos="zoom-in"><span>Adress : </span>Aveiro, Portugal</h3>
+                <h3 data-aos="zoom-in"><span>Phone : </span>+351 935 839 449</h3>
+                <h3 data-aos="zoom-in"><span>Experince : </span>3+ years</h3>
             </div>
-            <a href="images/CV - Ana Oliveira.pdf" class="btn" target="_blank">Download my CV</a>
+            <a href="images/CV - Ana Oliveira.pdf" class="btn" target="_blank" data-aos="fade-up">Download my CV</a>
         </div> 
 
         <div class="skills">
             <h1 class="heading"><span>Skills</span></h1>
             <div class="progress">
-                <div class="bar"><h3><span>HTML5</span> <span>90%</span></h3></div>
-                <div class="bar"><h3><span>CSS3</span> <span>65%</span></h3></div>
-                <div class="bar"><h3><span>JavaScript</span> <span>55%</span></h3></div>
-                <div class="bar"><h3><span>Bootstrap</span> <span>45%</span></h3></div>
-                <div class="bar"><h3><span>VUE</span> <span>45%</span></h3></div>
-                <div class="bar"><h3><span>React</span> <span>45%</span></h3></div>
-                <div class="bar"><h3><span>Python</span> <span>40%</span></h3></div>
-                <div class="bar"><h3><span>Go</span> <span>40%</span></h3></div> <br>
+                <div class="bar" data-aos="fade-left"><h3><span>HTML5</span> <span>90%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>CSS3</span> <span>65%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>JavaScript</span> <span>55%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>Bootstrap</span> <span>45%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>VUE</span> <span>45%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>React</span> <span>45%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>Python</span> <span>40%</span></h3></div>
+                <div class="bar" data-aos="fade-left"><h3><span>Go</span> <span>40%</span></h3></div> <br>
             
                 <div class="edu-exp">
                     <h1 class="heading"><span> Education & Experince</span></h1>
@@ -243,46 +246,103 @@
 
 <!--work section starts-->
 
-<section class="portfolio" id="portflolio">
 
-    <h1 class="heading"><span>My Work - Personal Portfolio</span></h1>
 
-    <div class="box-container">
+<section class="portfolio" id="portfolio">
+    <h1 class="heading"><span>My work</span></h1>
 
-        <div class="box">
-            <img src="images/7.png" alt="AnaDev">
-            <h3>Graphic Desing</h3>
-        </div>
+   <div class="box-container">
 
-        <div class="box">
-            <img src="images/1.png" alt="Programming">
-            <h3>Web Developer - Tips</h3>
-        </div>
+      <div class="box" data-aos="zoom-in">
+        <a href="images/anadev.png" target="_blank">
+            <img src="images/anadev.png" alt="anadev">
+        </a>
+         <h3>Graphic Designer</h3>
+      </div>
 
-        <div class="box">
-            <img src="images/2.png" alt="HTML Tags">
-            <h3>Web Developer - HTML Tags</h3>
-        </div>
+      <div class="box" data-aos="zoom-in">
+        <a href="images/programming.png" target="_blank">
+            <img src="images/programming.png" alt="programming">
+        </a>
+         <h3>Web Development</h3>
+         <span>5 Tips</span>
+      </div>
 
-        <div class="box">
-            <img src="images/3.png" alt="CSS - What is it?">
-            <h3>Web Developer - CSS - What is it?</h3>
-        </div>
+      <div class="box" data-aos="zoom-in">
+        <a href="images/html.png" target="_blank">
+            <img src="images/html.png" alt="html">
+        </a>
+         <h3>Web Development</h3>
+         <span>HTML</span>
+      </div>
 
-        <div class="box">
-            <img src="images/4.png" alt="JavaScript - How to use?">
-            <h3>Web Developer - JavaScript - How to use?</h3>
-        </div>
+      <div class="box" data-aos="zoom-in">
+        <a href="images/css.png" target="_blank">
+            <img src="images/css.png" alt="css">
+        </a>
+         <h3>Web Development</h3>
+         <span>CSS</span>
+      </div>
 
-        <div class="box">
-            <img src="images/5.png" alt="Framework and Libraries">
-            <h3>Web Developer - Framework and Libraries</h3>
-        </div>
-    </div>
+      <div class="box" data-aos="zoom-in">
+        <a href="images/js.png" target="_blank">
+            <img src="images/js.png" alt="js">
+        </a>
+         <h3>Web Development</h3>
+         <span>JavaScript</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+        <a href="images/frameworl.png" target="_blank">
+            <img src="images/frameworl.png" alt="programming">
+        </a>
+         <h3>Web Development</h3>
+         <span>Frameworks and Libraries</span>
+      </div>
+   </div>
+</section>
+<!--work section ends--> 
+
+<section class="contact" id="contact">
+
+   <h1 class="heading" data-aos="fade-up"> <span>contact me</span> </h1>
+
+   <form action="" method="post">
+      <div class="flex">
+         <input data-aos="fade-right" type="text" name="name" placeholder="enter your name" class="box" required>
+         <input data-aos="fade-left" type="email" name="email" placeholder="enter your email" class="box" required>
+      </div>
+      <input data-aos="fade-up" type="number" min="0" name="number" placeholder="enter your number" class="box" required>
+      <textarea data-aos="fade-up" name="message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
+      <input type="submit" data-aos="zoom-in" value="send message" name="send" class="btn">
+   </form>
+
+   <div class="box-container">
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-phone"></i>
+         <h3>Phone</h3>
+         <p>+351 935 839 449</p>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-envelope"></i>
+         <h3>Email</h3>
+         <p>ana_dev@sapo.pt</p>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-map-marker-alt"></i>
+         <h3>Address</h3>
+         <p>Aveiro, Portugal</p>
+      </div>
+   </div>
 </section>
 
+<div class="credit">&copy; copyright @ <?php echo date('Y'); ?> <br> All rights reserved to: <span>Ana Paula Oliveira </span></div>
 
-<!--work section ends--> 
+
+
 
 
 
