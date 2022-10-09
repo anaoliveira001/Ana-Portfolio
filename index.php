@@ -1,3 +1,24 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['send'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = mysqli_real_escape_string($conn, $_POST['number']);
+   $msg = mysqli_real_escape_string($conn, $_POST['message']);
+
+   $select_message = mysqli_query($conn, "SELECT * FROM `contact_form` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
+   
+   if(mysqli_num_rows($select_message) > 0){
+      $message[] = 'message sent already!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, message) VALUES('$name', '$email', '$number', '$msg')") or die('query failed');
+      $message[] = 'Message sent successfully!';
+   }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,10 +33,25 @@
      <link rel="stylesheet" href="css/style.scss">
     <!--CND link - font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- aos css link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <title>Ana_Dev</title>
 </head>
 
 <body>
+
+<?php
+if(isset($message)){
+   foreach($message as $message){
+      echo '
+      <div class="message" data-aos="zoom-out">
+         <span>'.$message.'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+      ';
+   }
+}
+?>
 
 <!--Animation Starts -->
 <div id="particle-container">
@@ -66,9 +102,8 @@
         <a href="#contact">Contact</a>
     </nav>
     <div class="follow">
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-linkedin"></a>
-        <a href="#" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/ana-paula-e-bb125165/" class="fab fa-linkedin"  target="_blank"></a>
+        <a href="https://github.com/anaoliveira001" class="fab fa-github" target="_blank"></a>
     </div>
     <!--navbar end -->
 </header>
@@ -121,12 +156,12 @@
                 <div class="bar" data-aos="fade-left"><h3><span>Go</span> <span>40%</span></h3></div> <br>
             
                 <div class="edu-exp">
-                    <h1 class="heading"><span> Education & Experince</span></h1>
+                    <h1 class="heading" data-aos="fade-up"><span> Education & Experince</span></h1>
                     <div class="row">
                         <div class="box-container">
                             <h3 class="title">Education</h3>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2007 - 2008)</span>
                                 <h3>Senai - Web Designer</h3>
                                 <p>
@@ -134,7 +169,7 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2019-2020)</span>
                                 <h3>Udemy Web Development - Frontend</h3>
                                 <p>
@@ -142,7 +177,7 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2020)</span>
                                 <h3>Data Analyst - Google Coursera</h3>
                                 <p>
@@ -150,7 +185,7 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2021)</span>
                                 <h3>UX/UI Desing - Google Coursera</h3>
                                 <p>
@@ -158,14 +193,14 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2021)</span>
                                 <h3>Bootcamp Frontend - IGTI</h3>
                                 <p>
                                     HTML, CSS, JS, Vue,advanced query handling techniques.
                                 </p>
                             </div>
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2021 - 2022)</span>
                                 <h3>Formação Frontent - Alura</h3>
                                 <p>
@@ -173,7 +208,7 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2021 - 2022)</span>
                                 <h3>Formação Python - Microsoft</h3>
                                 <p>
@@ -181,14 +216,14 @@
                                 </p>
                             </div>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2022-2023)</span>
                                 <h3>Formação Web Development (Frontend/Backend) - Cesae</h3>
                                 <p>
                                     Java, HTML, CSS, Bootstrap, PHP, Laravel, Angular, Android Mobile
                                 </p>
                             </div>
-                            <div class="box">
+                            <div class="box" data-aos="fade-right">
                                 <span>(2022-2023)</span>
                                 <h3>Formação Azure Cloud - Microsoft</h3>
                                 <p>
@@ -198,9 +233,9 @@
                         </div>
 
                         <div class="box-container">
-                            <h3 class="title">Experince</h3>
+                            <h3 class="title" data-aos="fade-left">Experince</h3>
 
-                            <div class="box">
+                            <div class="box" data-aos="fade-left">
                                 <span>(2013 - 2022)</span>
                                 <h3>Web Designer/ Frontend Developer</h3>
                             </div>
@@ -213,29 +248,29 @@
 
 <!--services section starts--> 
     <section class="services" id="services">
-        <h1 class="heading"><span>Services</span></h1>
+        <h1 class="heading" data-aos="fade-up"><span>Services</span></h1>
 
         <div class="box-container">
 
-            <div class="box">
+            <div class="box"  data-aos="zoom-in">
                 <i class="fas fa-code"></i>
                 <h3>Web Development</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
             </div>
 
-            <div class="box">
+            <div class="box"  data-aos="zoom-in">
                 <i class="fas fa-paint-brush"></i>
                 <h3>Graphic Desing</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
             </div>
 
-            <div class="box">
+            <div class="box"  data-aos="zoom-in">
                 <i class="fab fa-bootstrap"></i>
                 <h3>Bootstrap</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
             </div>
 
-            <div class="box">
+            <div class="box"  data-aos="zoom-in">
                 <i class="fab fa-wordpress"></i>
                 <h3>Wordpress</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
@@ -245,57 +280,42 @@
 <!--services section ends--> 
 
 <!--work section starts-->
-
-
-
 <section class="portfolio" id="portfolio">
     <h1 class="heading"><span>My work</span></h1>
 
    <div class="box-container">
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/anadev.png" target="_blank">
-            <img src="images/anadev.png" alt="anadev">
-        </a>
+        <img src="images/anadev.png" alt="">
          <h3>Graphic Designer</h3>
       </div>
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/programming.png" target="_blank">
-            <img src="images/programming.png" alt="programming">
-        </a>
+        <img src="images/programming.png" alt=""> 
          <h3>Web Development</h3>
          <span>5 Tips</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/html.png" target="_blank">
-            <img src="images/html.png" alt="html">
-        </a>
+        <img src="images/html.png" alt="">
          <h3>Web Development</h3>
          <span>HTML</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/css.png" target="_blank">
-            <img src="images/css.png" alt="css">
-        </a>
+        <  <img src="images/css.png" alt="">
          <h3>Web Development</h3>
          <span>CSS</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/js.png" target="_blank">
-            <img src="images/js.png" alt="js">
-        </a>
+        <img src="images/js.png" alt="">
          <h3>Web Development</h3>
          <span>JavaScript</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-        <a href="images/frameworl.png" target="_blank">
-            <img src="images/frameworl.png" alt="programming">
-        </a>
+         <img src="images/frameworl.png" alt="">
          <h3>Web Development</h3>
          <span>Frameworks and Libraries</span>
       </div>
@@ -359,5 +379,16 @@
 
     <!--JS file -->
     <script src="js/main.js"></script>
+
+    <!-- aos js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+   AOS.init({
+      duration:800,
+      delay:300
+   });
+
+</script>
 </body>
 </html>

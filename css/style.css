@@ -769,6 +769,23 @@ section{
 
 }
 
+.message{
+  position: sticky;
+  top: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  font-size: 2rem;
+}
+
+.message i {
+  cursor: pointer;
+}
+
 .btn{
     display: inline-block;
     margin-top: 1rem;
@@ -1086,6 +1103,11 @@ section{
   height: 30rem;
   width: 100%;
   object-fit: contain;
+  opacity: 0.5;
+}
+
+.portfolio .box-container .box img:hover{
+  opacity: 1.0;
 }
 
 .portfolio .box-container .box h3{
