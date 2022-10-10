@@ -31,7 +31,7 @@
 }
 
 *::-webkit-scrollbar-thumb{
-    background-color: var(--black);
+    background-color: var(--purple);
 }
 
 *::-webkit-scrollbar-track{
@@ -780,6 +780,7 @@ section{
   justify-content: space-between;
   padding: 2rem;
   font-size: 2rem;
+  font-family: monospace;
 }
 
 .message i {
@@ -817,11 +818,13 @@ section{
     flex-flow: column;
     transition: .2s linear !important;
     text-align: center;
+    z-index: 1000;
 }
 
 .header .logo{
     color: #827ce0;
     font-weight: bolder;
+    border-bottom: var(--border-bold);
     font-size: 4.5rem;
 }
 
@@ -833,7 +836,7 @@ section{
     display: block;
     font-size: 2.5rem;
     padding: 1.5rem;
-    margin: 3rem;
+    margin: 5rem;
 }
 
 .header .navbar a.active,
@@ -1177,16 +1180,35 @@ section{
   text-transform: none;
 }
 
+.contact .box-container .box:hover{
+  background-color: var(--colorful);
+}
+
 .credit{
   text-align: center;
-  background-color: var(--colorful);
-  padding:3rem;
-  font-size: 2rem;
+  padding:1.8rem;
+  font-size: 1.5rem;
   color:var(--black);
+  background: rgb(34,193,195);
+background: linear-gradient(11deg, rgba(34,193,195,1) 0%, rgba(214,128,231,1) 47%);
+}
+
+.credit:hover{
+  background:  var(--border-light);
+  color: var(--black);
 }
 
 .credit span{
-  color:#269dd9;
+  color:#d92668;
+}
+
+.credit span:hover{
+  color: #269dd9;
+}
+
+.credit .code img{
+  align-items: left;
+  width: 120px;
 }
 
 

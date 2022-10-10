@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +15,19 @@
 </head>
 
 <body>
-    
+
 <?php
 if (isset($_GET['r'])) {
     $r = $_GET['r'];
     if ($r == 'notsend') { ?>
        <div class="message" data-aos="zoom-out">
-         <span>'r'</span>
+         <span>'Message not send, please try again'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
     <?php
     } else if ($r == 'send') { ?>
          <div class="message" data-aos="zoom-out">
-         <span>'r'</span>
+         <span>'Message send, thank you for you contact'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
 <?php
@@ -343,10 +342,12 @@ if (isset($_GET['r'])) {
    </div>
 </section>
 
-<div class="credit">&copy; copyright @ <?php echo date('Y'); ?> <br> All rights reserved to: <span>Ana Paula Oliveira </span></div>
-
-
-
+<div class="credit">
+    <div class="code">
+        <img src="images/code_Ana1.png" alt="">
+    </div>&copy; copyright @ <?php echo date('Y'); ?> 
+    <br> All rights reserved to: <span>Ana Paula Oliveira</span><br>
+</div>
 
     <!--JS file -->
     <script src="js/main.js"></script>
