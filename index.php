@@ -1,24 +1,3 @@
-<?php
-
-$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
-
-if(isset($_POST['send'])){
-
-   $name = mysqli_real_escape_string($conn, $_POST['name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $number = mysqli_real_escape_string($conn, $_POST['number']);
-   $msg = mysqli_real_escape_string($conn, $_POST['message']);
-
-   $select_message = mysqli_query($conn, "SELECT * FROM `contact_form` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
-   
-   if(mysqli_num_rows($select_message) > 0){
-      $message[] = 'message sent already!';
-   }else{
-      mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, message) VALUES('$name', '$email', '$number', '$msg')") or die('query failed');
-      $message[] = 'Message sent successfully!';
-   }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +8,6 @@ if(isset($_POST['send'])){
     <link rel="shortcut icon" href="images/code_Ana1.png" type="image/x-icon">
     <!--CSS file -->
     <link rel="stylesheet" href="css/style.css">
-     <!--SCSS file -->
-     <link rel="stylesheet" href="css/style.scss">
     <!--CND link - font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- aos css link  -->
@@ -39,19 +16,25 @@ if(isset($_POST['send'])){
 </head>
 
 <body>
-
+    
 <?php
-if(isset($message)){
-   foreach($message as $message){
-      echo '
-      <div class="message" data-aos="zoom-out">
-         <span>'.$message.'</span>
+if (isset($_GET['r'])) {
+    $r = $_GET['r'];
+    if ($r == 'notsend') { ?>
+       <div class="message" data-aos="zoom-out">
+         <span>'r'</span>
          <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
       </div>
-      ';
-   }
-}
-?>
+    <?php
+    } else if ($r == 'send') { ?>
+         <div class="message" data-aos="zoom-out">
+         <span>'r'</span>
+         <i class="fas fa-times" onclick="this.parentElement.remove();"></i>
+      </div>
+<?php
+    }
+} ?>
+
 
 <!--Animation Starts -->
 <div id="particle-container">
@@ -95,16 +78,17 @@ if(isset($message)){
     <a href="#home" class="logo">AnaDev</a>
     <!--navbar starts -->
     <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About me</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">My work</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="follow">
-        <a href="https://www.linkedin.com/in/ana-paula-e-bb125165/" class="fab fa-linkedin"  target="_blank"></a>
-        <a href="https://github.com/anaoliveira001" class="fab fa-github" target="_blank"></a>
-    </div>
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+   </nav>
+
+   <div class="follow">
+      <a href="#" class="fab fa-linkedin"></a>
+      <a href="#" class="fab fa-github"></a>
+   </div>
     <!--navbar end -->
 </header>
 <!--header end -->
@@ -327,13 +311,13 @@ if(isset($message)){
 
    <h1 class="heading" data-aos="fade-up"> <span>contact me</span> </h1>
 
-   <form action="" method="post">
+   <form action="email.php" method="GET">
       <div class="flex">
          <input data-aos="fade-right" type="text" name="name" placeholder="enter your name" class="box" required>
-         <input data-aos="fade-left" type="email" name="email" placeholder="enter your email" class="box" required>
+         <input data-aos="fade-left" id="form-from" type="email" name="form-from" placeholder="enter your email" class="box" required>
       </div>
       <input data-aos="fade-up" type="number" min="0" name="number" placeholder="enter your number" class="box" required>
-      <textarea data-aos="fade-up" name="message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
+      <textarea data-aos="fade-up"  id= "form-message" name="form-message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
       <input type="submit" data-aos="zoom-in" value="send message" name="send" class="btn">
    </form>
 
@@ -364,22 +348,9 @@ if(isset($message)){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     <!--JS file -->
     <script src="js/main.js"></script>
-
+   
     <!-- aos js link  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
