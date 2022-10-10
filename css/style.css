@@ -43,10 +43,66 @@ html{
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
-/*Animation Starts*/
+
 body{
    background: #f4f8f8;
 }
+
+/*Dark mode Starts*/
+body.dark {
+  background: #525252;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
+
+}
+
+.label .ball {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.fa-moon {
+  color: #4da4f0;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+/*Dark mode ends*/
+
+
+
+/*Animation Starts*/
 
 .particle {
    position: absolute;
@@ -1210,6 +1266,10 @@ background: linear-gradient(11deg, rgba(34,193,195,1) 0%, rgba(214,128,231,1) 47
   align-items: left;
   width: 120px;
 }
+
+
+
+
 
 
 

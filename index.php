@@ -70,6 +70,7 @@ if (isset($_GET['r'])) {
 </div>
 <!--Animation ends -->
 
+ 
 
 <!--header starts -->
 <header class="header">
@@ -87,6 +88,7 @@ if (isset($_GET['r'])) {
    <div class="follow">
       <a href="#" class="fab fa-linkedin"></a>
       <a href="#" class="fab fa-github"></a>
+      <a href="#" class="fab fa-whatsapp"></a>
    </div>
     <!--navbar end -->
 </header>
@@ -94,6 +96,14 @@ if (isset($_GET['r'])) {
 
 <!--home section starts -->
     <section class="home" id="home">
+        <div>
+            <input type="checkbox" class="checkbox" id="chk">
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
         <div class="image" data-aos="fade-rigth">
             <img src="images/picture_ana.jpeg" alt="">
         </div>
@@ -351,9 +361,11 @@ if (isset($_GET['r'])) {
 
     <!--JS file -->
     <script src="js/main.js"></script>
+    <script src="js/dark.js"></script>
    
     <!-- aos js link  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 
 <script>
    AOS.init({
