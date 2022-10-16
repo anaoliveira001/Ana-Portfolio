@@ -86,9 +86,9 @@ if (isset($_GET['r'])) {
    </nav>
 
    <div class="follow">
-      <a href="#" class="fab fa-linkedin"></a>
-      <a href="#" class="fab fa-github"></a>
-      <a href="#" class="fab fa-whatsapp"></a>
+      <a href="https://www.linkedin.com/in/ana-paula-e-bb125165/" class="fab fa-linkedin"></a>
+      <a href="https://github.com/anaoliveira001" class="fab fa-github"></a>
+      <a href="https://api.whatsapp.com/send?phone=351935839449&text=Ol%C3%A1,%20em%20quem%20posso%20ajudar%20?" class="fab fa-whatsapp"></a>
    </div>
     <!--navbar end -->
 </header>
@@ -110,7 +110,8 @@ if (isset($_GET['r'])) {
         <div class="content">
            <h3 data-aos="fade-up">Hi, I am Ana Oliveira</h3>
            <span data-aos="fade-up">Frontend Web Developer and UI/UX Designer</span>
-           <p data-aos="fade-up">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat voluptatem dolore nostrum veritatis officiis deserunt facilis corrupti at, dicta ducimus quaerat reiciendis soluta illum rem cupiditate vitae, ea tempora itaque!</p>
+           <p data-aos="fade-up">Frontend has been my passion since first contact.
+            With this portfolio I can show my techniques with JavaScrip, HTML5, CSS6, Jquery, PHPMailer, Ajax and animations. Below, are my skills, experience, my work and contact field. </p>
            <a data-aos="fade-up" href="#about" class="btn">About Me</a>
         </div>
     </section>
@@ -248,25 +249,27 @@ if (isset($_GET['r'])) {
             <div class="box"  data-aos="zoom-in">
                 <i class="fas fa-code"></i>
                 <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
+                <p>JavaScrip, HTML, CSS, Vue, React, Ajax, Ionic</p>
             </div>
 
             <div class="box"  data-aos="zoom-in">
                 <i class="fas fa-paint-brush"></i>
                 <h3>Graphic Desing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
+                <p>Ps, Ai, Figma, <br> DrawiO</p>
             </div>
 
             <div class="box"  data-aos="zoom-in">
                 <i class="fab fa-bootstrap"></i>
                 <h3>Bootstrap</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
+                <p>Version 4 & 5 - 
+                    Modal, Cards, Navbar, Carousel, Text, Icons
+                </p>
             </div>
 
             <div class="box"  data-aos="zoom-in">
                 <i class="fab fa-wordpress"></i>
                 <h3>Wordpress</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore facere veniam aut aspernatur sint temporibus illo atque laboriosam. Voluptates ipsam modi aliquam corrupti. Voluptate perspiciatis quo cupiditate quia! Neque, perspiciatis!</p>
+                <p>E-commerce</p>
             </div>
         </div>
     </section>
